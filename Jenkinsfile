@@ -56,6 +56,7 @@ pipeline
         failure
         {
             sh 'echo We should send an email out when the build fails.'
+            sh 'echo $?'
         }
     }
 }

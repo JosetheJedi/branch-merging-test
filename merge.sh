@@ -19,7 +19,6 @@ function merging_stage()
 
     if [ $? -ne 0 ]
     then
-        echo "wtf is this working?"
         git merge --abort
         exit 1
     fi
