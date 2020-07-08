@@ -14,6 +14,8 @@ pipeline
         {
             steps
             {
+                sh 'chmod 755 configureGit.sh'
+                sh "./configureGit.sh ${params.USERNAME} ${params.USEREMAIL}"
                 sh 'chmod 755 merge.sh'
                 sh './merge.sh merging_stage'
             }
