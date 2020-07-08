@@ -17,7 +17,7 @@ function merging_stage()
 
     git merge origin/master
 
-    cat .gitignore
+    echo $?
 }
 
 function building_stage()
