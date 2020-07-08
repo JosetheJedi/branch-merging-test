@@ -2,14 +2,12 @@
 
 function merging_stage()
 {
-    echo "merging_stage"
-    git branch -a
-
     if ! currentBranch=$(git symbolic-ref -q HEAD)
     then
         echo "We are not currently on a branch!"
         echo 
         echo "Attempting to checkout integration branch!"
+        
         git checkout -b integration origin/integration
     else
         echo "We are currently on branch: ${currentBranch}"
