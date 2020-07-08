@@ -20,13 +20,6 @@ pipeline
                 sh './merge.sh merging_stage'
             }
         }
-        post
-        {
-            failure
-            {
-                emailext body: 'some error', subject: 'Jenkins Build Failed', to: 'josefhu15@gmail.com'
-            }
-        }
         stage("Building")
         {
             steps
@@ -56,6 +49,13 @@ pipeline
                 sh "echo Cleaning up :3"
                 deleteDir()
             }
+        }
+    }
+     post
+    {
+        failure
+        {
+            emailext body: 'some error', subject: 'Jenkins Build Failed', to: 'josefhu15@gmail.com'
         }
     }
 }
