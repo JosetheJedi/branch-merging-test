@@ -18,7 +18,7 @@ function merging_stage()
         echo "We are currently on branch: ${currentBranch}"
     fi
 
-    git merge master
+    git merge origin/master
 }
 
 function building_stage()

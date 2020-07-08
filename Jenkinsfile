@@ -16,6 +16,7 @@ pipeline
         {
             steps
             {
+                sh 'chmod 755 merge.sh'
                 sh './merge.sh building_stage'
             }
         }
