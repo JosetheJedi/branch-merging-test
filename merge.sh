@@ -16,6 +16,8 @@ function merging_stage()
     fi
 
     git merge origin/master
+
+    cat .gitignore
 }
 
 function building_stage()
