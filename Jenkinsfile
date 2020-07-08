@@ -9,6 +9,7 @@ pipeline
             steps
             {
                 sh 'chmod 755 merge.sh'
+                sh 'cat ~/.gitconfig'
                 sh './merge.sh merging_stage'
             }
         }
