@@ -17,7 +17,11 @@ function merging_stage()
 
     git merge origin/master
 
-    echo $?
+    if [ $? -ne 0 ]
+    then
+        git merge --abort
+        exit 1
+    fi
 }
 
 function building_stage()
