@@ -20,6 +20,13 @@ pipeline
                 sh './merge.sh merging_stage'
             }
         }
+        post
+        {
+            failure
+            {
+                emailext body: 'some error', subject: 'Jenkins Build Failed', to: 'josefhu15@gmail.com'
+            }
+        }
         stage("Building")
         {
             steps
