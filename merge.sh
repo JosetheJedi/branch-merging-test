@@ -51,3 +51,4 @@ else
     exit 1
 fi
 
+echo "Lets see if this worked!"
