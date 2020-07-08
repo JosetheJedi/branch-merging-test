@@ -8,9 +8,6 @@ function merging_stage()
     if ! currentBranch=$(git symbolic-ref -q HEAD)
     then
         echo "We are not currently on a branch!"
-        echo
-        echo "Attempting to checkout master"
-        git checkout -b master origin/master
         echo 
         echo "Attempting to checkout integration branch!"
         git checkout -b integration origin/integration
