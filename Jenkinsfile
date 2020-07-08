@@ -2,6 +2,12 @@ pipeline
 {
     agent any
 
+    parameters{
+        string(name: 'USERNAME', defaultValue: 'Jenkins', description: 'Who is running this task?')
+
+        string(name: 'USEREMAIL', defaultValue: 'josefhu15@gmail.com', description: 'Enter your email. Default is SCRUM Masters.')
+    }
+
     stages
     {
         stage("Merging")
