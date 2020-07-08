@@ -51,11 +51,11 @@ pipeline
             }
         }
     }
-     post
+    post
     {
         failure
         {
-            emailext body: 'some error', subject: 'Jenkins Build Failed', to: 'josefhu15@gmail.com'
+            sh 'echo We should send an email out when the build fails.'
         }
     }
 }
