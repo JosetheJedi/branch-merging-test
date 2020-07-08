@@ -17,10 +17,9 @@ function merging_stage()
 
     git merge origin/master
 
-    echo "wtf is this working?"
-
     if [ $? -ne 0 ]
     then
+        echo "wtf is this working?"
         git merge --abort
         exit 1
     fi
