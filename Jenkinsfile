@@ -26,7 +26,7 @@ pipeline
                 echo "$scriptReturnStatus"
 
             }
-            when{ 
+            when { 
                 scriptReturnStatus = "1"
             }
         }
