@@ -20,6 +20,8 @@ function merging_stage()
         git merge --abort
         exit 1
     fi
+
+    exit 1
 }
 
 function building_stage()
