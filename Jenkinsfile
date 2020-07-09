@@ -26,7 +26,7 @@ pipeline
                 echo "$scriptReturnStatus"
 
                 sh '''
-                    if [ $scriptReturnStatus = 1 ]
+                    if [ ${scriptReturnStatus} = 1 ]
                     then
                         exit 1
                     fi
