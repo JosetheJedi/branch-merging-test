@@ -23,7 +23,6 @@ pipeline
                 script{
                     scriptReturnStatus = sh(returnStatus: true, script: './merge.sh merging_stage')
                 }
-                echo "$scriptReturnStatus"
 
                 sh '''
                     if [ ${scriptReturnStatus} = 1 ]
