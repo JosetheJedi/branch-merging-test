@@ -27,7 +27,9 @@ pipeline
 
             }
             when { 
-                scriptReturnStatus = "1"
+                expression{
+                    scriptReturnStatus = "1"
+                }
             }
         }
         stage("Building")
