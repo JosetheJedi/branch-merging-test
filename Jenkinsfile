@@ -29,9 +29,6 @@ pipeline
             when{ 
                 scriptReturnStatus = "1"
             }
-            steps{
-                echo "hello world it failed"
-            }
         }
         stage("Building")
         {
