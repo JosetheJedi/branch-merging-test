@@ -31,7 +31,7 @@ pipeline
         {
             when { 
                 expression{
-                    scriptReturnStatus == 1
+                    scriptReturnStatus != 1
                 }
             }
             steps
