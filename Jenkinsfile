@@ -1,3 +1,5 @@
+def scriptReturnStatus = ''
+
 pipeline 
 {
     agent any
@@ -17,7 +19,11 @@ pipeline
                 sh 'chmod 755 configureGit.sh'
                 sh "./configureGit.sh ${params.USERNAME} ${params.USEREMAIL}"
                 sh 'chmod 755 merge.sh'
-                sh './merge.sh merging_stage'
+                // sh './merge.sh merging_stage'
+                script{
+                    scriptReturnStatus = sh(returnStdout: true, script: './merge.sh merging_stage')
+                }
+                echo "$scriptReturnStatus"
             }
         }
         stage("Building")
