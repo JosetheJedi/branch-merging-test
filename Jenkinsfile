@@ -24,6 +24,13 @@ pipeline
                     scriptReturnStatus = sh(returnStatus: true, script: './merge.sh merging_stage')
                 }
                 echo "$scriptReturnStatus"
+
+            }
+            when{ 
+                scriptReturnStatus = "1"
+            }
+            steps{
+                echo "hello world it failed"
             }
         }
         stage("Building")
