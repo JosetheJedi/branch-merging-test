@@ -21,7 +21,7 @@ pipeline
                 sh 'chmod 755 merge.sh'
                 // sh './merge.sh merging_stage'
                 script{
-                    scriptReturnStatus = sh(returnStdout: true, script: './merge.sh merging_stage')
+                    scriptReturnStatus = sh(returnStatus: true, script: './merge.sh merging_stage')
                 }
                 echo "$scriptReturnStatus"
             }
