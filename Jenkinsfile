@@ -26,14 +26,14 @@ pipeline
                 echo "$scriptReturnStatus"
 
             }
-            when { 
-                expression{
-                    scriptReturnStatus = "1"
-                }
-            }
         }
         stage("Building")
         {
+            when { 
+                expression{
+                    scriptReturnStatus == "1"
+                }
+            }
             steps
             {
                 sh 'chmod 755 merge.sh'
